@@ -1,11 +1,5 @@
 <?php
-$lastname = 'Param non présent';
-$firstname = 'Param non présent';
 
-if ((isset($_GET['lastname'])) && (isset($_GET['firstname']))) {
-    $lastname =  $_GET['lastname'];
-    $firstname =  $_GET['firstname'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -19,25 +13,12 @@ if ((isset($_GET['lastname'])) && (isset($_GET['firstname']))) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Partie 6 - Exercice 1</title>
+    <title>Partie7 exo3</title>
 </head>
 <!--<p>
-    Voici l'URL à étudier :
+  ## Exercice 3
+Avec le formulaire de l'exercice 1, afficher dans la page user.php les données du formulaire transmis.
 
-index.php?lastname=Tutor&firstname=Janine
-
-Faire une page index.php.
-Sur cette page faire 2 boutons :
-
-Le premier "bouton" doit contenir un href qui pointe vers l'URL. Il faut ensuite tester sur cette même page que tous les paramètres existent :
-S'ils sont présents les afficher.
-Dans le cas contraire ne rien afficher.
-Le deuxieme "bouton" doit permettre de revenir à la page index.php.
-Boutons :
-exemple
-
-Affichage :
-exemple
     </p>-->
 
 <body>
@@ -46,8 +27,7 @@ exemple
             <a name="submitParam" id="submitParam" class="btn btn-primary" href="index.php?lastname=Tutor&firstname=Janine" role="button">Envoi des paramètres</a>
             <a name="submitParam" id="submitParam" class="btn btn-secondary" href="index.php" role="button">Retour INDEX</a>
         </div>
-        <p class="text-center">Param1 :<?= $lastname ?></p>
-        <p class="text-center">Param2 :<?= $firstname ?></p>
+       
     </div>
 
 
