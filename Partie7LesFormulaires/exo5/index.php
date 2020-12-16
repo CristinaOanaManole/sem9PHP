@@ -1,5 +1,35 @@
 <?php
 
+if (empty($_POST)) {
+    $showForm = true;
+} else {
+    $showForm = false;
+}
+
+$regexName = '/^[a-zA-Z]+$/';
+
+if (isset($_GET['firstname'],$_POST['lastname'], $_POST['gender'])) {
+    if (preg_match($regexName, $_POST['firstname'])) {
+        $securedFirstName = htmlspecialchars($_POST['firstname']);
+    } else {
+        $securedFirstName = '';
+    }
+
+    if (preg_match($regexName, $_POST['lastname'])) {
+        $securedLastName = htmlspecialchars($_GET['lastname']);
+    } else {
+        $securedFirstName = '<i>Mauvais format</i>';
+    }
+
+    if ($_POST['gender'] == 'Monsieur') {
+        $gender = ($_POST['gender']);
+        echo 'vous avez choisi l\'option Mrs';
+    } else {
+        $gender = ($_POST['gender']);
+        echo 'vous avez choisi l\'option Mme';
+    }
+}
+var_dump($_POST);?>
 ?>
 
 <!DOCTYPE html>
@@ -28,15 +58,27 @@ Vous avez le choix de la méthode.
     </p>-->
 
 <body>
-    <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <a name="submitParam" id="submitParam" class="btn btn-primary" href="index.php?lastname=Tutor&firstname=Janine" role="button">Envoi des paramètres</a>
-            <a name="submitParam" id="submitParam" class="btn btn-secondary" href="index.php" role="button">Retour INDEX</a>
-        </div>
-       
+    <div class="container text-center mt-5">
+        
+    <?php if ($showForm) {?>
+
+        <form class="form-groupe" action="index.php" method="$_POST">
+            <select name="gender" size="1">
+                <option name="madame">Mme
+                <option name="monsieur">Mr
+            </select>
+
+            <label for="lastName">Nom</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Indiquer votre nom">
+            <label for="firstName">Prénom</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Indiquer votre prénom">
+            <input type="submit" name="button" value="Envoyer">
+        </form>
+        <?php } else { ?>
+        <p>Bonjour je m'appelle, <?= $gender . ' ' . $securedFirstName . ' ' . $securedLastName; ?>
+        </p>
+        <?php } ?>
     </div>
-
-
 
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="/style.css" rel="stylesheet" text="text/css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
@@ -22,11 +18,15 @@ Créer un formulaire demandant **le nom** et **le prénom**. Ce formulaire doit 
     </p>-->
 
 <body>
-    <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <a name="submitParam" id="submitParam" class="btn btn-primary" href="index.php?lastname=Tutor&firstname=Janine" role="button">Envoi des paramètres</a>
-            <a name="submitParam" id="submitParam" class="btn btn-secondary" href="index.php" role="button">Retour INDEX</a>
-        </div>
+    <div class="container text-center mt-5">
+
+    <form class="formulaire" action="user.php" method="get">
+    <label for="lastName">Nom</label>
+        <input type="text" name="lastName" id="lastName" placeholder="Indiquer votre nom">
+        <label for="firstName">Prénom</label>
+        <input type="text" name="firstName" id="firstName" placeholder="Indiquer votre prénom">
+        <input type="submit" value="Envoyer">
+    </form>
        
     </div>
 

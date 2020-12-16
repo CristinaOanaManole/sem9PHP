@@ -1,6 +1,25 @@
 <?php
+    if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['title']) && isset($_FILES['pdfFile'])) {
+        echo $_POST['title'] . " " . $_POST['lastName'] . " " . $_POST['firstName'] . "<br>" . $_FILES['pdfFile']['name'];
+    } else {
+    ?>
+        <form action="index.php" method="post" enctype="multipart/form-data">
+            <label for="title">Civilité</label>
+            <select name="title" id='title'>
+                <option value="Mr">Mr</option>
+                <option value="Mme">Mme</option>
+            </select>
+            <label for="lastName">Nom</label>
+            <input type="text" name="lastName" id='lastName'>
+            <label for="firstName">Prénom</label>
+            <input type="text" name="firstName" id='firstName'>
+            <label for="pdfFile">Ajouter un fichier:</label>
+            <input type="file" name="pdfFile" id='pdfFile' accept="application/pdf">
+            <input type="submit" value="Valider">
+        </form>
+    <?php }
+    ?>
 
-?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,13 +40,22 @@ Sur le formulaire de l'exercice 6, en plus de ce qui est demandé sur les exerci
     </p>-->
 
 <body>
-    <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <a name="submitParam" id="submitParam" class="btn btn-primary" href="index.php?lastname=Tutor&firstname=Janine" role="button">Envoi des paramètres</a>
-            <a name="submitParam" id="submitParam" class="btn btn-secondary" href="index.php" role="button">Retour INDEX</a>
-        </div>
-       
+<div class="container text-center mt-5">
+        <form class="form-groupe" action="index.php" method="$_POST">
+            <select name="nom" size="1">
+                <option id="madame" name="civilite" value="madame">Mme
+                <option id="monsieur" name="monsieur" value="monsieur">Mr
+            </select>
+
+            <label for="lastName">Nom</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Indiquer votre nom">
+            <label for="firstName">Prénom</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Indiquer votre prénom">
+            <input type="submit" value="Envoyer">
+        </form>
+
     </div>
+
 
 
 

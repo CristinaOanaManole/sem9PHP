@@ -1,5 +1,38 @@
 <?php
 
+$regexName = "/^[a-zA-Z]+$/";
+
+if (isset($_POST["firstname"]) && isset($_POST["lastname"])) {
+
+    // Sécurisation des données, regex pour verifier prénom et nom
+    if (preg_match($regexName, $_POST["firstname"])) {
+        $securedFirstname = htmlspecialchars($_POST["firstname"]);
+    } else {
+        $securedFirstname = "<i>Mauvais format</i>";
+    }
+
+    if (preg_match($regexName, $_POST["lastname"])) {
+        $securedLastname = htmlspecialchars($_POST["lastname"]);
+    } else {
+        $securedLastname = "<i>Mauvais format</i>";
+    }
+
+}
+?>
+
+<?php
+$firstName = '';
+$lastName = '';
+$civilite = '';
+
+if (isset($_POST['civilite']) && isset($_POST['firstName']) && isset($_POST['lastName'])) {
+    $civilite = $_POST['civilite'];
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    
+} else {
+    $display = 'display: ';
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,15 +56,21 @@ Utiliser qu'une seule page..
     </p>-->
 
 <body>
-    <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <a name="submitParam" id="submitParam" class="btn btn-primary" href="index.php?lastname=Tutor&firstname=Janine" role="button">Envoi des paramètres</a>
-            <a name="submitParam" id="submitParam" class="btn btn-secondary" href="index.php" role="button">Retour INDEX</a>
-        </div>
-       
+<div class="container text-center mt-5">
+        <form class="form-groupe" action="index.php" method="$_POST">
+            <select name="civilite" size="1">
+                <option name="madame">Mme
+                <option name="monsieur">Mr
+            </select>
+
+            <label for="lastName">Nom</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Indiquer votre nom">
+            <label for="firstName">Prénom</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Indiquer votre prénom">
+            <input type="submit" name="button" value="Envoyer">
+        </form>
+
     </div>
-
-
 
 
     <!-- Optional JavaScript; choose one of the two! -->
