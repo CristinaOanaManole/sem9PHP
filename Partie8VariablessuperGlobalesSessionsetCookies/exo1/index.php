@@ -13,21 +13,22 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Partie7 exo1</title>
+    <title>Partie8 exo1</title>
 </head>
 <!--<p>
-    ## Exercice 1
-Créer un formulaire demandant **le nom** et **le prénom**. Ce formulaire doit rediriger vers la page **user.php** avec la méthode **GET**.
+## Exercice 1
+Faire une page HTML permettant de donner à l'utilisateur :
+- son User Agent
+- son adresse ip
+- le nom du serveur
 
     </p>-->
 
 <body>
-    <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <a name="submitParam" id="submitParam" class="btn btn-primary" href="index.php?lastname=Tutor&firstname=Janine" role="button">Envoi des paramètres</a>
-            <a name="submitParam" id="submitParam" class="btn btn-secondary" href="index.php" role="button">Retour INDEX</a>
-        </div>
-       
+    <div class="container mt-5">
+        <div class="userAgent bg-primary border text-center">User Agent : <?= $_SERVER['HTTP_USER_AGENT'] . '<br>' ?></div>
+        <div class="remoteAddresse bg-light border text-center">Adresse ip : <?= $_SERVER['REMOTE_ADDR'] . '<br>' ?></div>
+        <div class="serverName bg-success border text-center">Nom du serveur : <?= $_SERVER['SERVER_NAME'] ?></div>
     </div>
 
 

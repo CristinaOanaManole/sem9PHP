@@ -1,5 +1,11 @@
 <?php
 
+session_start();
+
+$_SESSION["lastname"] = "Martin";
+$_SESSION["firsname"] = "Mathieu";
+$_SESSION["age"] = 25;
+
 ?>
 
 <!DOCTYPE html>
@@ -13,23 +19,21 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Partie7 exo1</title>
+    <title>Partie8 exo2</title>
 </head>
 <!--<p>
-    ## Exercice 1
-Créer un formulaire demandant **le nom** et **le prénom**. Ce formulaire doit rediriger vers la page **user.php** avec la méthode **GET**.
-
+## Exercice 2
+Sur la page index, faire un liens vers une autre page. Passer d'une page à l'autre le contenu des variables **lastname**, **firstname** et **age** grâce aux sessions. Ces variables auront été définies directement dans le code.  
+Il faudra afficher le contenu de ces variables sur la deuxième page.
     </p>-->
 
 <body>
-    <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <a name="submitParam" id="submitParam" class="btn btn-primary" href="index.php?lastname=Tutor&firstname=Janine" role="button">Envoi des paramètres</a>
-            <a name="submitParam" id="submitParam" class="btn btn-secondary" href="index.php" role="button">Retour INDEX</a>
-        </div>
-       
+<div class="container mt-5">
+    <button type="submit" name="envoyer" action="user.php">Envoyer<a href="user.php"></a></button>
+        <div class="firstName bg-primary border text-center">Votre nom :</div>
+        <div class="lastName bg-light border text-center">Votre prénom :</div>
+        <div class="age bg-success border text-center">Votre age :</div>
     </div>
-
 
 
 

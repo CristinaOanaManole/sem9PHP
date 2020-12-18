@@ -1,5 +1,5 @@
 <?php
-   if (isset($_GET["civilite"]) && isset($_GET["firstname"]) && isset($_GET["lastname"])) {
+   /*if (isset($_GET["civilite"]) && isset($_GET["firstname"]) && isset($_GET["lastname"])) {
     if (preg_match("/^[a-zA-Z]+$/", $_GET["civilite"])) {
         $securedCivilite = htmlspecialchars($_GET["civilite"]);
     }
@@ -9,8 +9,12 @@
     if (preg_match("/^[a-zA-Z]+$/", $_GET["lastname"])) {
         $securedLastName = htmlspecialchars($_GET["lastname"]);
     }
-}
-        ?>
+}*/
+if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['gender'])) {
+    echo 'Nom : ' . $_POST['lastname'] . ' <br> Prénom : ' . $_POST['firstname'] . ' <br> Genre : ' . $_POST['gender'] . ' <br> Fichier : ' . $_FILES['filepdf']['name'];
+} else { 
+    ?>
+        
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -33,9 +37,9 @@ Au formulaire de l'exercice 5, ajouter un champ d'envoi de fichier. Afficher en 
 
 <body>
 <div class="container text-center mt-5">
-        <form class="form-groupe" action="index.php" method="$_POST">
-            <select name="civilite" size="1">
-                <option id="madame" name="civilite" value="madame">Mme
+        <form class="form-groupe" action="index.php" method="$_POST" enctype="multipart/form-data">
+            <select name="gender" size="1">
+                <option id="madame" name="madame" value="madame">Mme
                 <option id="monsieur" name="monsieur" value="monsieur">Mr
             </select>
 
@@ -46,6 +50,9 @@ Au formulaire de l'exercice 5, ajouter un champ d'envoi de fichier. Afficher en 
             <input type="file" name="file">
             <input type="submit" value="Envoyer">
         </form>
+        <?php
+        }
+        ?>
 
     </div>
 

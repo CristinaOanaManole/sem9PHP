@@ -1,25 +1,18 @@
-<?php
-    if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['title']) && isset($_FILES['pdfFile'])) {
-        echo $_POST['title'] . " " . $_POST['lastName'] . " " . $_POST['firstName'] . "<br>" . $_FILES['pdfFile']['name'];
-    } else {
-    ?>
-        <form action="index.php" method="post" enctype="multipart/form-data">
-            <label for="title">Civilité</label>
-            <select name="title" id='title'>
-                <option value="Mr">Mr</option>
-                <option value="Mme">Mme</option>
-            </select>
-            <label for="lastName">Nom</label>
-            <input type="text" name="lastName" id='lastName'>
-            <label for="firstName">Prénom</label>
-            <input type="text" name="firstName" id='firstName'>
-            <label for="pdfFile">Ajouter un fichier:</label>
-            <input type="file" name="pdfFile" id='pdfFile' accept="application/pdf">
-            <input type="submit" value="Valider">
-        </form>
-    <?php }
-    ?>
+   <?php
 
+   if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['gender'])) {
+       $fileinfo = pathinfo($_FILES['filepdf']['name']);
+       $extension_pdf = $fileinfo['extension'];
+       if ($extension_pdf == 'pdf') {
+           $displayExtension = 'Le fichier est bien un pdf';
+       } else {
+           $displayExtension = 'Le fichier n\'est pas un pdf';
+       }
+       echo 'Nom : ' . $_POST['lastname'] . ' <br> Prénom : ' . $_POST['firstname'] . ' <br> Genre : ' . $_POST['gender'] . ' <br> Fichier : '
+           . $_FILES['filepdf']['name'] . '<br> Extension : ' . $displayExtension;
+   } else {
+
+   ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -41,7 +34,7 @@ Sur le formulaire de l'exercice 6, en plus de ce qui est demandé sur les exerci
 
 <body>
 <div class="container text-center mt-5">
-        <form class="form-groupe" action="index.php" method="$_POST">
+        <form class="form-groupe" action="index.php" method="$_POST" enctype="multipart/form-data">
             <select name="nom" size="1">
                 <option id="madame" name="civilite" value="madame">Mme
                 <option id="monsieur" name="monsieur" value="monsieur">Mr
@@ -53,6 +46,10 @@ Sur le formulaire de l'exercice 6, en plus de ce qui est demandé sur les exerci
             <input type="text" name="firstName" id="firstName" placeholder="Indiquer votre prénom">
             <input type="submit" value="Envoyer">
         </form>
+
+    <?php 
+}
+    ?>
 
     </div>
 
