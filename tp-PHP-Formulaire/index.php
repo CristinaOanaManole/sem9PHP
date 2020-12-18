@@ -30,24 +30,24 @@
     $_FILES['fileToUpload']['tmp_name'] 
     -->
 
-    <?php
-    var_dump($_FILES);
+   <!-- Taille maxi: 1Mo soit 1048576 octets soit 1024 * 1024 -->
+        <!-- 1024 = 1 Ko // 1024 * 2 = 2ko... // 1024 * 1024 = 1 Mo // 1024 * 1024 *1024 = 1 Go // ... -->
 
-    if (isset($_FILES['fileToUpload'])) {
-        $validExtension = ["image/png", "image/jpg", "image/jpeg", "image/gif"];
-        if (!in_array($_FILES['fileToUpload']['type'], $validExtension)) {
-            echo "Le fichier transmis doit être une image. Il n'a pas été uploadé";
-        } else if (($_FILES['fileToUpload']['size'] > 1024 * 1024)) {
-            echo "Le fichier doit faire moins de 1Mo. Il n'a pas été uploadé.";
-        } else {
-            move_uploaded_file($_FILES['fileToUpload']['tmp_name'], 'img/' . basename($_FILES['fileToUpload']['name']));
-            echo "L'image a bien été uploadée sous le nom suivant: " . $_FILES['fileToUpload']['name'];
+        <?php
+        if (isset($_FILES['fileToUpload'])) {
+            $validExtension = ["image/png", "image/jpg", "image/jpeg", "image/gif"];
+            if (!in_array($_FILES['fileToUpload']['type'], $validExtension)) {
+                echo "Le fichier transmis doit être une image. Il n'a pas été uploadé";
+            } else if (($_FILES['fileToUpload']['size'] > 1024 * 1024)) {
+                echo "Le fichier doit faire moins de 1Mo. Il n'a pas été uploadé.";
+            } else {
+                move_uploaded_file($_FILES['fileToUpload']['tmp_name'], 'img/' . uniqid() . strrchr($_FILES['fileToUpload']['name'], '.'));
+                echo "L'image (" . $_FILES['fileToUpload']['name'] . ") a bien été uploadée.";
+            }
         }
-    }
-
-    ?>
+        ?>
+</div>
  
- ?>
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
