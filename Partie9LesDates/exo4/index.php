@@ -23,13 +23,9 @@ Afficher le timestamp du mardi 2 août 2016 à 15h00.
 
 <body>
 <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <form name="user" action="index.php" metod="post">
-            <label for="login">Identifiant </label><input name="login">
-            <label for="password">Mot de passe </label><input name="password">
-            </form>
-            <a name="valider" class="btn btn-secondary" href="index.php" role="button">Valider</a>
-        </div>
+    <div class="text-center mt-5 justify-content-center">
+        <h1><?= 'La date du jour est '. $date ?></h1>
+    </div>
     </div>
 
 

@@ -1,5 +1,6 @@
 <?php
-
+setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
+$date = strftime ('%A %d %B %Y');
 ?>
 
 <!DOCTYPE html>
@@ -24,13 +25,9 @@ Bonus : Le faire en français.
 
 <body>
 <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <form name="user" action="index.php" metod="post">
-            <label for="login">Identifiant </label><input name="login">
-            <label for="password">Mot de passe </label><input name="password">
-            </form>
-            <a name="valider" class="btn btn-secondary" href="index.php" role="button">Valider</a>
-        </div>
+    <div class="text-center mt-5 justify-content-center">
+        <h1><?= 'La date du jour est '. $date ?></h1>
+    </div>
     </div>
 
 

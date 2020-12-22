@@ -1,9 +1,11 @@
 <?php
-            echo date('d/m/Y'). '<br>';
-            echo date('l d m Y h:i:s'). '<br>';
-            echo date('c'). '<br>';
-            echo date('r'). '<br>';
-        ?>
+$date = date('d/m/Y');
+/*echo date('d/m/Y') . '<br>';
+echo date('l d m Y h:i:s') . '<br>';
+echo date('c') . '<br>';
+echo date('r') . '<br>';*/
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,15 +26,10 @@ Afficher la date courante en respectant la forme jj/mm/aaaa (ex : 16/05/2016).
 </p>-->
 
 <body>
-<div class="container">
-<h1>Titre principal</h1>
-        <?php
-            echo date('d/m/Y'). '<br>';
-            echo date('l d m Y h:i:s'). '<br>';
-            echo date('c'). '<br>';
-            echo date('r'). '<br>';
-        ?>
-        <p>Un paragraphe</p>
+    <div class="container">
+    <div class="text-center mt-5 justify-content-center">
+        <h1><?= 'La date du jour est '. $date ?></h1>
+    </div>
     </div>
 
 
