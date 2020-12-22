@@ -1,11 +1,7 @@
 <?php
-if (isset($_POST["login"]) && isset($_POST["password"])) {
-    setcookie("password", $_POST["password"], time()+36000, null, null, false, true);
-    setcookie("login", $_POST["login"], time()+36000, null, null, false, true);
-    header('Location: user.php'); // on retourne sur user.php (refresh)
-} 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,13 +13,14 @@ if (isset($_POST["login"]) && isset($_POST["password"])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Partie8 exo5</title>
+    <title>Partie9 exo3</title>
 </head>
 <!--<p>
-## Exercice 5
-Faire une page qui va pouvoir modifier le contenu du cookie de l'exercice 3.
+## Exercice 3
+Afficher la date courante avec le jour de la semaine et le mois en toutes lettres (ex : mardi 2 août 2016)
+Bonus : Le faire en français.
 
-    </p>-->
+</p>-->
 
 <body>
 <div class="container">

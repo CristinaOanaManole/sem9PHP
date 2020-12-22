@@ -1,19 +1,6 @@
 <?php
 
-var_dump($_POST);
-
-if (isset($_POST['login'], $_POST['password'])) {
-    $userLogin = $_POST['login'];
-    $userPassword = $_POST['password'];
-    setcookie('user', $userLogin, time() + 365 * 24 * 3600);
-    setcookie('pass', $userPassword, time() + 365 * 24 * 3600);
-}
-
-if (isset($_COOKIE['login'], $_COOKIE['password'])) {
-    echo 'Votre nom d\'utilisateur est ' . $_COOKIE['login'] . ' et votre mot de passe est ' . $_COOKIE['password'];
-}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,16 +13,15 @@ if (isset($_COOKIE['login'], $_COOKIE['password'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Partie8 exo4</title>
+    <title>Partie9 exo6</title>
 </head>
 <!--<p>
-## Exercice 4
-Faire une page qui va récupérer les informations du cookie créé à l'exercice 3 et qui les  affiches.
-
-    </p>-->
+## Exercice 6
+Afficher le nombre de jour dans le mois de février de l'année 2016.
+</p>-->
 
 <body>
-    <div class="container">
+<div class="container">
         <div class="text-center mt-5 justify-content-center">
             <form name="user" action="index.php" metod="post">
             <label for="login">Identifiant </label><input name="login">
@@ -45,7 +31,7 @@ Faire une page qui va récupérer les informations du cookie créé à l'exercic
         </div>
     </div>
 
-       
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

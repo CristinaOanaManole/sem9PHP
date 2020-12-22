@@ -6,6 +6,7 @@ if (isset($_POST["login"]) && isset($_POST["password"])) {
 } 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -17,26 +18,27 @@ if (isset($_POST["login"]) && isset($_POST["password"])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Partie8 exo5</title>
+    <title>Partie8 exo4</title>
 </head>
 <!--<p>
-## Exercice 5
-Faire une page qui va pouvoir modifier le contenu du cookie de l'exercice 3.
+## Exercice 4
+Faire une page qui va récupérer les informations du cookie créé à l'exercice 3 et qui les  affiches.
 
     </p>-->
 
 <body>
-<div class="container">
+    <div class="container">
         <div class="text-center mt-5 justify-content-center">
             <form name="user" action="index.php" metod="post">
-            <label for="login">Identifiant </label><input name="login">
-            <label for="password">Mot de passe </label><input name="password">
+                <label for="login">Identifiant </label><input name="login">
+                <label for="password">Mot de passe </label><input name="password">
             </form>
             <a name="valider" class="btn btn-secondary" href="index.php" role="button">Valider</a>
         </div>
     </div>
 
-
+    <p>Votre pseudo est <?= isset($_COOKIE['login']) ? $_COOKIE['login'] : "" ?></p>
+    <p>Votre password est <?= isset($_COOKIE['password']) ? $_COOKIE['password'] : "" ?></p>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

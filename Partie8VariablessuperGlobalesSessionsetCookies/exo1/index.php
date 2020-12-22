@@ -1,7 +1,9 @@
 <?php
-
+// var_dump($_SERVER); (important)
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    $ipAdress = $_SERVER["REMOTE_ADDR"];
+    $serverName = $_SERVER["SERVER_NAME"];
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -26,9 +28,9 @@ Faire une page HTML permettant de donner à l'utilisateur :
 
 <body>
     <div class="container mt-5">
-        <div class="userAgent bg-primary border text-center">User Agent : <?= $_SERVER['HTTP_USER_AGENT'] . '<br>' ?></div>
-        <div class="remoteAddresse bg-light border text-center">Adresse ip : <?= $_SERVER['REMOTE_ADDR'] . '<br>' ?></div>
-        <div class="serverName bg-success border text-center">Nom du serveur : <?= $_SERVER['SERVER_NAME'] ?></div>
+        <div class="userAgent bg-primary border text-center">User Agent : <?= $userAgent; ?></div><!-- User Agent -->
+        <div class="remoteAddresse bg-light border text-center">Adresse ip : <?= $ipAdress; ?></div><!-- Adresse IP du client qui demande la page courante. -->
+        <div class="serverName bg-success border text-center">Nom du serveur : <?= $serverName; ?></div><!-- Nom du serveur hôte qui exécute le script -->
     </div>
 
 

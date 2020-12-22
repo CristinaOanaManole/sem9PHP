@@ -1,14 +1,9 @@
 <?php
-
-var_dump($_POST);
-
-if (isset($_POST['login']) && isset($_POST['password'])) {
-    $userLogin = $_POST['login'];
-    $userPassword = $_POST['password'];
-    setcookie('user', $userLogin, time() + 365 * 24 * 3600);
-    setcookie('pass', $userPassword, time() + 365 * 24 * 3600);
-}
-
+// if (isset($_POST["login"]) && isset($_POST["password"])) {
+//     setcookie("login", $_POST["login"], time()+36000, null, null, false, true);
+//     setcookie("password", $_POST["password"], time()+36000, null, null, false, true);
+//     // header('Location: user.php');
+// } 
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +21,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
 </head>
 <!--<p>
    ## Exercice 3
-Faire un formulaire qui permet de récupérer le login et le mot de passe de l'utilisateur. A la validation du formulaire, stocker les informations dans un cookie.
+Faire un formulaire qui permet de récupérer le login et le mot de passe de l'utilisateur. A la validation du formulaire, stocker les informations dans un cookie dans la même page.
 
     </p>-->
 

@@ -1,6 +1,12 @@
 <?php
 $directory = 'img/';
 $files = scandir($directory);
+$fcount = 0; 
+foreach($files as $key => $image){
+    if (!is_dir($image)){
+        $fcount++;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,18 +32,34 @@ $files = scandir($directory);
                 <input type="submit" value="Valider">
             </form>
             <img id="imgPreview">
-            <a href="galerie.php"><button type="button" class="btn btn-primary m-2" action="galerie.php">
-                    Notifications <span class="badge bg-secondary"><?= count($files) - 2 ?></span>
+            <a href="gallery.php"><button type="button" class="btn btn-primary m-2" formaction="gallery.php">
+                    Images <span class="badge bg-secondary"><?= $fcount ?></span>
                 </button></a>
         </div>
 
         <!-- Taille maxi: 1Mo soit 1048576 octets soit 1024 * 1024 -->
         <!-- 1024 = 1 Ko // 1024 * 2 = 2ko... // 1024 * 1024 = 1 Mo // 1024 * 1024 *1024 = 1 Go // ... -->
 
+        <!-- Deux solutions valables pour trouver mime type content:
+        Solution1:
+        Retourne le type mime à l'extension mimetype
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        Récupère le mime-type d'un fichier spécifique */    
+        $file_MimeType = $finfo->file($_FILES['fileToUpload']['tmp_name']);
+        echo $file_MimeType;
+        Solution2:
+        mime_content_type($_FILES['fileToUpload']['tmp_name']);
+        echo mime_content_type($_FILES['fileToUpload']['tmp_name']); -->
+
         <?php
+        // Retourne le type mime à l'extension mimetype
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        // Récupère le mime-type d'un fichier spécifique */
+        $file_MimeType = $finfo->file($_FILES['fileToUpload']['tmp_name']);
+
         if (isset($_FILES['fileToUpload'])) {
             $validExtension = ["image/png", "image/jpg", "image/jpeg", "image/gif"];
-            if (!in_array($_FILES['fileToUpload']['type'], $validExtension)) {
+            if (!in_array($file_MimeType, $validExtension)) {
                 echo "Le fichier transmis doit être une image. Il n'a pas été uploadé";
             } else if (($_FILES['fileToUpload']['size'] > 1024 * 1024)) {
                 echo "Le fichier doit faire moins de 1Mo. Il n'a pas été uploadé.";
@@ -48,15 +70,7 @@ $files = scandir($directory);
         }
         ?>
     </div>
- 
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
--->
     <script src="assets/script.js"></script>
 </body>
 
