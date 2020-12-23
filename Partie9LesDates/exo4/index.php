@@ -1,4 +1,6 @@
-
+<?php
+$date = mktime(15, 0, 0, 8, 2, 2016);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -19,15 +21,15 @@ Afficher le timestamp du mardi 2 août 2016 à 15h00.
 </p>-->
 
 <body>
-<div class="container">
-    <div class="text-center mt-5 justify-content-center">
-        <h1><?= 'La date du jour est '. $date ?></h1>
-        <?php 
-            echo 'Timestamp actuel : ' .time(). '<br>';
-            echo 'Timestamp actuel (avec mktime()) : '.mktime(). '<br>';
-            echo "mardi 2 août 2016, c'était il y a " . mktime(0, 0, 15, 8, 02, 2016) . ' secondes ';
-            ?>
-    </div>
+    <div class="container">
+        <div class="text-center mt-5 justify-content-center">
+            <h1>
+                <?php
+                echo 'Timestamp actuel : ' . time() . '<br>';
+                echo 'Timestamp du mardi 2 août 2016 à 15h00. : ' . $date . '<br>';
+                ?>
+            </h1>
+        </div>
     </div>
 
 

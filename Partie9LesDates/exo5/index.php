@@ -1,8 +1,7 @@
 <?php
-$datedebut = mktime(15, 0, 5, 16, 2016);
-$datefin = time();
-$dureedates = abs($datefin - $datedebut);
-
+$origin = date_create('2016-05-16');
+$target = date_create('2020-12-22');
+$interval = date_diff($origin, $target);
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +25,7 @@ Afficher le nombre de jour qui sépare la date du jour avec le 16 mai 2016.
 <body>
 <div class="container">
 <div class="text-center mt-5 justify-content-center">
-        <h1><?= 'Le nombre des jours depuis le 16 mai 2016 est :  ' . $dureedates ?></h1>
+        <h1><?php echo $interval->format('%R%a jours'); ?></h1>
     </div>
     </div>
 
