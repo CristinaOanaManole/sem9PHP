@@ -1,5 +1,5 @@
 <?php
-
+$jourdansmois = cal_days_in_month(CAL_GREGORIAN, 2, 2016);
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +22,9 @@ Afficher le nombre de jour dans le mois de février de l'année 2016.
 
 <body>
 <div class="container">
-        <div class="text-center mt-5 justify-content-center">
-            <form name="user" action="index.php" metod="post">
-            <label for="login">Identifiant </label><input name="login">
-            <label for="password">Mot de passe </label><input name="password">
-            </form>
-            <a name="valider" class="btn btn-secondary" href="index.php" role="button">Valider</a>
-        </div>
+<div class="text-center mt-5 justify-content-center">
+        <h1><?= 'Le nombre des jours février 2016 est :  ' . $jourdansmois ?></h1>
+    </div>
     </div>
 
 

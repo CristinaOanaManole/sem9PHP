@@ -1,5 +1,7 @@
 <?php
-
+setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
+$day = date('d/m/Y');
+$addtwentydays = date('d/m/Y', strtotime('+ 20 days'));
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +23,9 @@ Afficher la date du jour + 20 jours.
 </p>-->
 
 <body>
-<div class="container">
+    <div class="container">
         <div class="text-center mt-5 justify-content-center">
-            <form name="user" action="index.php" metod="post">
-            <label for="login">Identifiant </label><input name="login">
-            <label for="password">Mot de passe </label><input name="password">
-            </form>
-            <a name="valider" class="btn btn-secondary" href="index.php" role="button">Valider</a>
+            <h1><?= 'La date du jour + 20 jours :  ' .$addtwentydays ?></h1>
         </div>
     </div>
 

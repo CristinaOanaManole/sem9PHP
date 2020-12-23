@@ -1,6 +1,6 @@
 <?ph>
-$date = date('dd [.\t] mm "." yy');
-
+$date = date('d-m-y');
+echo date('d-m-y');
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ Afficher la date courante en respectant la forme jj-mm-aa (ex : 16-05-16).
 <body>
 <div class="container">
     <div class="text-center mt-5 justify-content-center">
-        <h1><?= 'La date du jour est ' . $date ?></h1>
+        <!--<h1><?= 'La date du jour est ' . $date ?></h1>-->
     </div>
     </div>
 
