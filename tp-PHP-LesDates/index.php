@@ -36,9 +36,10 @@ $date = date('d/m/Y');
 
 
 <body>
-
+<div class="container text-center m-5">
     <form action="calendrier.php" method="get">
         <div>
+            <label>Veuillez choisir le mois</label>
             <select name="months">
                 <?php
                 foreach ($months as $month) {
@@ -50,6 +51,7 @@ $date = date('d/m/Y');
             </select>
         </div>
         <div>
+        <label>Veuillez choisir l'année</label>
             <select name="years">
                 <?php
                 for ($y = $startIntYear; $y <= $endIntYear; $y++) {
@@ -62,6 +64,7 @@ $date = date('d/m/Y');
         </div>
         <input type="submit" value="Valider">
     </form>
+            </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
