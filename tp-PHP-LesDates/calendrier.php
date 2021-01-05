@@ -68,7 +68,7 @@ if (isset($_GET["months"]) && isset($_GET["years"])) {
         ?>
 
         <table class="table table-bordered text-center">
-            <thead>
+            <thead class="title">
                 <tr>
                     <?php
                     foreach ($weeks as $week) {
@@ -81,21 +81,25 @@ if (isset($_GET["months"]) && isset($_GET["years"])) {
                 </tr>
             </thead>
             <tbody>
-                <tr class="case">
-                    <?php
-                    for ($case = 1; $case <= ($nbDays + ($firstDayInMonth - 1)); $case++) {
-                    ?>
-                        <td><?= $case ?></td>
-
-                        <?php
-                        if (($nbDays + $case) % 7 == 0) echo "</tr><tr>";
-                        ?>
-
-                    <?php
+            <tbody class="text-center font-weight-bold">
+            <tr>
+                <?php
+                for ($case = 1; $case <= ($nbDays + ($firstDayInMonth - 1)); $case++) {
+                ?>
+                    <td class="case"><?= $case >= $firstDayInMonth ? $case - $firstDayInMonth + 1 : '' ?></td>
+                <?php
+                    if ($case % 7 == 0) { 
+                ?>
+                    </tr>
+                    <tr>
+                <?php
                     }
-                    ?>
-                </tr>
-            </tbody>
+                ?>
+                <?php
+                    }
+                ?>
+            </tr>
+        </tbody>
         </table>
         <div class="text-center mt-5">
             <a href="index.php" class="btn btn-primary">Retour</a>
