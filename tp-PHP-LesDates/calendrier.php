@@ -44,8 +44,6 @@ if (isset($_GET["months"]) && isset($_GET["years"])) {
 
 ?>
 
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
