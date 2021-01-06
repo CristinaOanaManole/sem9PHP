@@ -15,11 +15,11 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container mt-4 mb-4">
         <div class="row">
             <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
                 <div class="card login-content shadow-lg border-0">
-                    <h1 class="text-center m-5 pt-5">Formulaire d'inscription</h1>
+                    <h1 class="text-center m-5">Formulaire d'inscription</h1>
 
                     <form class="form-register border-light" action="index.php" method="GET" enctype="multipart/form-data">
                         <p class="text-center"><span> Complétez le formulaire.
