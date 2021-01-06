@@ -32,14 +32,17 @@ if (isset($_GET["months"]) && isset($_GET["years"])) {
     $month = array_search($_GET["months"], $months) + 1;
     $years = $_GET["years"];
 
-    // Retourne le nombre de jours dans un mois, pour une année et un calendrier donné
     $nbDays = cal_days_in_month(CAL_GREGORIAN, $month, $years);
-    // La date locale
     $firstDayInMonth = strftime("%u", strtotime($month . "/01/" . $years));
-    var_dump($nbDays);
-    var_dump($firstDayInMonth);
+
+    if ((($nbDays + $firstDayInMonth - 1) % 7) != 0) {
+        $extraCases = 7 - (($nbDays + $firstDayInMonth - 1) % 7);
+    } else {
+        $extraCases = 0;
+    }
 }
 
+?>
 
 ?>
 
