@@ -67,43 +67,67 @@
                             <fieldset>
                                 <legend class="text-center mb-2 mt-2">Informations personnelles</legend>
                                 <div class="container">
+                                    <div class="px-1">
+
                                     <div class="">
-                                        <label for="dateofBirth" class="">Votre date de naissance<em>*</em></label>
+                                        <label for="dateofBirth" class="p-2">Votre date de naissance<em>*</em></label>
                                         <input id="dateofBirth" type="date" placeholder="jour/mois/année" pattern="[0-9]{1-2}" required=""><br> <!--  -->
+                                    </div>
 
                                         <div class="">
-                                            <label for="birthCountry" class="">Pays de naissance :</label>
+                                            <label for="birthCountry" class="p-2">Pays de naissance :</label>
                                             <input type="text" id="birthCountry" name="birthCountry">
                                         </div>
 
                                         <div class="">
-                                            <label for="countryOrigin">Nationalité :</label>
+                                            <label for="countryOrigin" class="p-2">Nationalité :</label>
                                             <input type="text" id="countryOrigin" name="countryOrigin">
                                         </div>
 
                                         <div class="">
-                                            <label for="email">Adresse mail :<em>*</em></label>
+                                            <label for="email" class="p-2">Adresse mail :<em>*</em></label>
                                             <input name="email" type="text" size="22">
                                         </div>
 
                                         <div class="">
-                                            <label for="lien">Liens codecademy :</label>
+                                            <label for="graduate" class="p-2">Diplôme :</label>
+                                            <input type="radio" name="optradio" value="sans BAC">sans BAC
+                                            <input type="radio" name="optradio" value="BAC">BAC
+                                            <input type="radio" name="optradio" value="BAC">BAC+2
+                                            <input type="radio"A name="optradio" value="BAC">BAC+3 ou supérieur
+
+                                        </div>
+
+                                        <div class="">
+                                            <label for="lien" class="p-2">Lien codecademy :</label>
                                             <input type="text" name="url" size="12" value="http://">
                                         </div>
 
                                         <div class="">
-                                            <label for="comments">Pourquoi voulez-vous vous impliquer dans l'organisation du point γ?</label>
-                                            <textarea id="comments"></textarea>
+                                            <label for="com" class="p-2">
+                                                Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi ?
+                                            <textarea id=""></textarea>
                                         </div>
+
+
+                                        <div class="">
+                                            <label for="comment" class="p-2">
+                                                Racontez-nous un de vos "hacks" (pas forcément technique ou informatique)
+                                                <textarea id=""></textarea>
+                                        </div>
+
+                                        <div class="">
+                                            <label for="commen">
+                                                Avez vous déjà eu une expérience avec la programmation et/ou l'informatique <br> 
+                                                avant de remplir ce formulaire ?
+                                                <textarea id=""></textarea>
+                                        </div>
+
+                                        <input class="text-center" type="submit" name="submit" value="valider"></p>
+
                             </fieldset>
 
-                            <select name="graduate" size="1">
-                                <radio name="sans BAC" value="sans BAC">sans BAC
-                                    <radio name="BAC" value="BAC">BAC
-                            </select>
-                            <radio>Avez vous déjà eu une expérience avec la programmation et/ou l'informatique avant de remplir ce formulaire ?</radio>
-                            <radio></radio>
-                            <input type="submit" name="submit" value="valider"></p>
+
                         </div>
                 </div>
                 </form>
