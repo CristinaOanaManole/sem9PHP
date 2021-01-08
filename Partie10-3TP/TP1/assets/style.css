@@ -16,6 +16,10 @@ em {
 textarea {
 	width: 94%;
 }
+
+button {
+	color: white;
+}
 .contact {
 	margin-left: 1.5rem;
 }
