@@ -3,58 +3,40 @@ html {
 	width: 100%;
 }
 
-
 p {
 	margin-top: 0px;
 }
 
-fieldset {
-	margin-bottom: 150px;
-	padding: 10px;
-	color: black;
-}
-
-legend {
-	padding: 0px 3px;
-	font-weight: bold;
-	font-variant: small-caps;
-}
-
-label {
-	width: 110px;
-	display: inline-block;
-	vertical-align: top;
-	margin: 6px;
-}
-
 em {
 	font-weight: bold;
-	font-style: normal;
+	font-style: small;
 	color: #f00;
 }
 
-
-/*input,
 textarea {
-	width: 300px;
+	width: 94%;
+}
+.contact {
+	margin-left: 1.5rem;
+}
+	
+.info {
+	margin-left: 1.5rem;
 }
 
-input:focus {
-	background: #eaeaea;
-  }
-   
-textarea {
-	height: 100px;
+.questionnaire {
+	margin-left: 1.5rem;
 }
 
-select {
-	width: 254px;
+.case {
+	margin-left: 5rem;
 }
-
-input[type=checkbox] {
-	width: 10px;
+#birthCountry {
+	width: 24%;
 }
-
+#countryOrigin {
+width: 20%;
+}
 input[type=submit] {
 	width: 150px;
 	padding: 10px;
