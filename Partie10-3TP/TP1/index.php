@@ -231,8 +231,8 @@ function userForm($var)
                                 <fieldset>
                                     <legend class="text-center mb-2 mt-2">Contact</legend>
                                     <div class="contact">
-                                        <label for="lastName" class="p-2 mx-2">Votre nom : <em>*</em></label>
-                                        <input type="text" name="lastName" class="case" id="lastName" placeholder="Indiquer votre nom" required="" minlength="4" maxlength="20" size="20" value="">
+                                        <label for="lastName" class="p-2">Votre nom : <em>*</em></label>
+                                        <input type="text" name="lastName" class="caseName" id="lastName" placeholder="Indiquer votre nom" required="" minlength="4" maxlength="20" size="20" value="">
                                     </div>
 
                                     <div class="contact">
@@ -246,8 +246,8 @@ function userForm($var)
                                     </div>
 
                                     <div class="contact">
-                                        <label for="phone" class="p-2">Votre téléphone :<em>*</em></label>
-                                        <input type="text" id="phone" name="phone" class="case" placeholder="0612345678" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" required>
+                                        <label for="phone" class="m-2">Votre téléphone :<em>*</em></label>
+                                        <input type="text" id="phone" name="phone" class="phone" placeholder="0612345678" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" required>
                                     </div>
                                 </fieldset>
 
@@ -257,7 +257,7 @@ function userForm($var)
 
                                     <div class="info">
                                         <label for="dateofBirth" class="p-2">Votre date de naissance<em>*</em></label>
-                                        <input type="date" class="mx-2" id="dateofBirth" name="dateofBirth" placeholder="jour/mois/année" pattern="[0-9]{1-2}" required=""> <!--  -->
+                                        <input type="date" class="mx-3" id="dateofBirth" name="dateofBirth" placeholder="12/12/2021" pattern="[0-9]{1-2}" required=""> <!--  -->
                                     </div>
 
                                     <div class="info">
@@ -267,35 +267,38 @@ function userForm($var)
 
                                     <div class="info">
                                         <label for="countryOrigin" class="p-2">Nationalité :<em>*</em></label>
-                                        <input type="text" class="" id="countryOrigin" name="countryOrigin">
+                                        <input type="text" class="origin" id="countryOrigin" name="countryOrigin">
                                     </div>
 
                                     <div class="info">
                                         <label for="email" class="p-2">Adresse mail :<em>*</em></label>
-                                        <input type="text" class="" name="email" size="27">
+                                        <input type="text" class="mail" name="email" size="27" placeholder="john@mail.com">
                                     </div>
 
                                     <div class="info">
                                         <label for="graduate" class="p-2" id="">Diplôme :<em>*</em></label>
-                                        <input type="radio" id="" class="pt-2" name="optradio" value="sans BAC">sans BAC
-                                        <input type="radio" id="" name="optradio" value="BAC">BAC
-                                        <input type="radio" id="" name="optradio" value="BAC">BAC+2
-                                        <input type="radio" id="" name="optradio" value="BAC">BAC+3 ou supérieur
+                                        <select class="choixDiplome">
+                                            <option class="choix" value="" disabled>Votre choix</option>
+                                            <option class="optInfo" name="optradio" value="1">sans BAC</option>
+                                            <option class="optInfo" name="optradio" value="2">BAC</option>
+                                            <option class="optInfo" name="optradio" value="3">BAC+2</option>
+                                            <option class="optInfo" name="optradio" value="4">BAC+3 ou supérieur</option>
+                                        </select>
                                     </div>
 
                                     <div class="info">
                                         <label for="numberPE" class="p-2" id="">Numéro Pôle Emploi :<em>*</em></label>
-                                        <input type="text" class="" id="" name="numberPE" placeholder="1234567Y" value="94567Y">
+                                        <input type="text" class="numberPE" id="" name="numberPE" placeholder="1234567Y" value="94567Y">
                                     </div>
 
                                     <div class="info">
                                         <label for="lien" class="p-2">Lien codecademy :</label>
-                                        <input type="text" class="" name="url" size="12" value="http://">
+                                        <input type="text" class="url" name="url" size="12" value="http://">
                                     </div>
 
                                     <div class="info">
                                         <label for="numberBadges" class="p-2" id="">Nombres de badges :</label>
-                                        <input type="text" id="" name="badges" placeholder="Combien des badges avez-vous ?" value="2" min="1" max="30">
+                                        <input type="text" id="" class="badges" name="badges" placeholder="Combien des badges avez-vous ?" value="2" min="1" max="30">
                                     </div>
 
                                     <fieldset>
@@ -318,8 +321,8 @@ function userForm($var)
                                             <label for="comExp" class="px-1">
                                                 Avez vous déjà eu une expérience avec la programmation et/ou l'informatique <br>
                                                 avant de remplir ce formulaire ?
-                                                <input type="radio" id="" class="px-4" name="optionradio" value="Oui">Oui
-                                                <input type="radio" id="" name="optionradio" value="Non">Non
+                                                <input type="radio" id="radioOui" class="" name="optionradio" value="Oui">Oui
+                                                <input type="radio" id="radioNon" name="optionradio" value="Non">Non
                                         </div>
                                     </fieldset>
 
@@ -337,171 +340,27 @@ function userForm($var)
                     </div>
                 </div>
             </div>
-
         <?php
-    } else {
+    }
         ?>
 
-            <?php
-            if (count($error) == 0) {
-            ?>
+        <?php
+        if (count($error) == 0) {
+        ?>
 
-                <h1 class="red text-center text-info mt-5">Merci pour votre inscription</h1>
+            <h1 class="red text-center text-info mt-5">Merci pour votre inscription</h1>
 
-            <?php
-            } else {
-            ?>
+        <?php
+        } else {
+        ?>
+        <?php
+        }
+        ?>
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-
-
-                <div class="container mt-4 mb-4">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-10 col-sm-12 col-12 mx-auto">
-                            <div class="card login-content shadow-lg border-0">
-                                <h1 class="text-center m-5">Formulaire d'inscription</h1>
-
-                                <form class="form-register border-light bg-light" action="index.php" method="POST" enctype="multipart/form-data">
-                                    <p class="text-center"><span> Complétez le formulaire.
-                                            Les champs marqué par </span>
-                                        <em>*</em> sont <em> obligatoires </em>
-                                    </p>
-
-                                    <div class="mx-auto">
-                                        <fieldset>
-                                            <legend class="text-center mb-2 mt-2">Contact</legend>
-
-                                            <div class="px-4 m-1">
-
-                                                <label for="lastName" class="px-2">Votre nom : <em>*</em></label>
-                                                <input class="m-3" type="text" name="lastName" id="lastName" placeholder="Indiquer votre nom" required="" minlength="4" maxlength="20" size="20" value="<?= isset($securedlastName) ? $securedlastName : "" ?>">">
-                                                <span><?= isset($error["lastName"]) ? $error["lastName"] : "" ?></span>
-
-                                                <label for="firstName" class="px-2">Votre prénom :<em>*</em></label>
-                                                <input type="text" name="firstName" id="firstName" placeholder="Indiquer votre prénom" required="" minlength="4" maxlength="20" size="20" value="<?= isset($securedfirstName) ? $securedfirstName : "" ?>">
-                                                <span><?= isset($error["firstName"]) ? $error["firstName"] : "" ?></span>
-
-                                            </div>
-
-                                            <div class="px-4 m-1">
-                                                <label for="address" class="px-2">Votre adresse :<em>*</em></label>
-                                                <input type="text" id="address" name="address" placeholder="1 rue Colbert 75000 Paris" required value="<?= isset($securedaddress) ? $securedaddress : "" ?>">
-                                                <span><?= isset($error["address"]) ? $error["address"] : "" ?></span>
-
-                                                <label for="phone" class="px-2">Votre téléphone :<em>*</em></label>
-                                                <input type="text" id="phone" name="phone" placeholder="0612345678" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" required value="<?= isset($securedphone) ? $securedphone : "" ?>">
-                                                <span><?= isset($error["phone"]) ? $error["phone"] : "" ?></span>
-                                            </div>
-                                        </fieldset>
-
-                                        <fieldset>
-                                            <legend class="text-center mb-2 mt-2">Informations personnelles</legend>
-
-                                            <div class="px-1">
-
-                                                <div class="">
-                                                    <label for="dateofBirth" class="p-2">Votre date de naissance<em>*</em></label>
-                                                    <input type="date" class="mx-2" id="dateofBirth" name="dateofBirth" placeholder="jour/mois/année" pattern="[0-9]{1-2}" required="" value="<?= isset($secureddateofBirth) ? $secureddateofBirth : "" ?>"> <!--  -->
-                                                    <span><?= isset($error["dateofBirth"]) ? $error["dateofBirth"] : "" ?></span>
-                                                </div>
-
-                                                <div class="">
-                                                    <label for="birthCountry" class="p-2">Pays de naissance :</label>
-                                                    <input type="text" class="mx-5" id="birthCountry" name="birthCountry" value="<?= isset($securedbirthCountry) ? $securedbirthCountry : "" ?>">
-                                                    <span><?= isset($error["birthCountry"]) ? $error["birthCountry"] : "" ?></span>
-                                                </div>
-
-                                                <div class="">
-                                                    <label for="countryOrigin" class="p-2">Nationalité :</label>
-                                                    <input type="text" class="mx-5" id="countryOrigin" name="countryOrigin" value="<?= isset($securedbirthCountry) ? $securedbirthCountry : "" ?>">
-                                                    <span><?= isset($error["birthCountry"]) ? $error["birthCountry"] : "" ?></span>
-
-                                                </div>
-
-                                                <div class="">
-                                                    <label for="email" class="p-2">Adresse mail :<em>*</em></label>
-                                                    <input type="text" class="mx-4" name="email" size="22" value="<?= isset($securedemail) ? $securedemail : "" ?>">
-                                                    <span><?= isset($error["email"]) ? $error["email"] : "" ?></span>
-                                                </div>
-
-                                                <div class="">
-                                                    <label for="graduate" class="p-2" id="">Diplôme :</label>
-                                                    <input type="radio" id="" name="optradio" value="sans BAC">sans BAC
-                                                    <input type="radio" id="" name="optradio" value="BAC">BAC
-                                                    <input type="radio" id="" name="optradio" value="BAC">BAC+2
-                                                    <input type="radio" id="" name="optradio" value="BAC">BAC+3 ou supérieur
-
-                                                </div>
-
-                                                <div class="">
-                                                    <label for="numberPE" class="p-2" id="">Numéro Pôle Emploi :</label>
-                                                    <input type="text" class="px-1" id="" name="numberPE" placeholder="1234567Y" value="<?= isset($securednumberPE) ? $securednumberPE : "" ?>">
-                                                    <span><?= isset($error["numberPE"]) ? $error["numberPE"] : "" ?></span>
-                                                </div>
-
-                                                <div class="">
-                                                    <label for="lien" class="p-2">Lien codecademy :</label>
-                                                    <input type="text" class="mx-4" name="url" size="12" value="<?= isset($securedurl) ? $securedurl : "" ?>">
-                                                    <span><?= isset($error["url"]) ? $error["url"] : "" ?></span>
-
-                                                    <label for="numberBadges" class="p-2" id="">Nombres de badges :</label>
-                                                    <input type="text" id="" name="badges" placeholder="Combien des badges avez-vous ?" value="<?= isset($securednumberBadges) ? $securednumberBadges : "" ?>" min="1" max="30">
-                                                    <span><?= isset($error["numberBadges"]) ? $error["numberBadges"] : "" ?></span>
-
-                                                </div>
-
-                                                <div class="">
-                                                    <label for="comHero" class="p-2">
-                                                        Si vous étiez un super héros/une super héroïne, qui seriez-vous et pourquoi ?
-                                                        <textarea name="comHero" id="" value="<?= isset($securedcomHero) ? $securedcomHero : "" ?>"></textarea>
-                                                        <span><?= isset($error["comHero"]) ? $error["comHero"] : "" ?></span>
-                                                </div>
-
-
-                                                <div class="">
-                                                    <label for="comHack" class="p-2">
-                                                        Racontez-nous un de vos "hacks" (pas forcément technique ou informatique)
-                                                        <textarea name="comHack" id="" value="<?= isset($securedcomHack) ? $securedcomHack : "" ?>"></textarea>
-                                                        <span><?= isset($error["comHack"]) ? $error["comHack"] : "" ?></span>
-                                                </div>
-
-                                                <div class="">
-                                                    <label for="comExp">
-                                                        Avez vous déjà eu une expérience avec la programmation et/ou l'informatique <br>
-                                                        avant de remplir ce formulaire ?
-
-                                                        <input type="radio" id="" class="px-4" name="optionradio" value="Oui">Oui
-                                                        <input type="radio" id="" name="optionradio" value="Non">Non
-
-                                                </div>
-                                                <div class="text-center">
-                                                    <button class="mx-auto m-3" type="submit" name="submit" value="">Valider</button>
-
-                                                </div>
-
-                                        </fieldset>
-
-
-                                    </div>
-                            </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-        </div>
-
-    <?php
-            }
-    ?>
-
-<?php
-    }
-?>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<!--
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
