@@ -1,6 +1,6 @@
 html,
 body {
-	background-color: #39495a;
+	background-color: #088388;
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -28,7 +28,7 @@ textarea {
 	height: 7rem;
 }
 
-button {
+.btn {
 	color: white;
 }
 
@@ -64,7 +64,7 @@ button {
 	margin-left: 5.5rem;
 }
 
-.choixDiplome {
+.pickDiplome {
 	margin-left: 7.7rem;
 }
 
@@ -101,4 +101,8 @@ button {
 input[type=submit] {
 	width: 15rem;
 	padding: 2rem;
+}
+
+.displayMessageError {
+	color: red;
 }
