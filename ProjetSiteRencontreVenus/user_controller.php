@@ -1,16 +1,16 @@
 <?php
-  session_start(); 
-  include('bd/connexionDB.php'); 
-  // S'il n'y a pas de session alors on ne va pas sur cette page
-  if(!isset($_SESSION['id'])){ 
-    header('Location: index.php'); 
-    exit; 
-  }
-  // On récupère les informations de l'utilisateur connecté
-  $afficher_profil = $DB->query("SELECT * 
-    FROM utilisateur 
-    WHERE id = ?", 
-  array($_SESSION['id']));
-  
-  $afficher_profil = $afficher_profil->fetch(); 
-  
+
+if (isset($_POST["deleteCookies"])) {
+    setcookie("lastname", "", time(), null, null, false, true);
+    setcookie("firstname", "", time(), null, null, false, true);
+    setcookie("age", "", time(), null, null, false, true);
+    setcookie("gender", "", time(), null, null, false, true);
+    setcookie("postalCode", "", time(), null, null, false, true);
+    setcookie("email", "", time(), null, null, false, true);
+    setcookie("type", "", time(), null, null, false, true);
+
+
+    header("Location: index.php");
+} 
+
+?>
