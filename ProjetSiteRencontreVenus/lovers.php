@@ -18,43 +18,67 @@ require_once "lovers_controller.php";
     <title>Site de rencontre VENUS</title>
 </head>
 
-<body>
+<body class="wallpaperLovers">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
+        <div class="d-flex ml-auto">
+            <a class="navbar-brand" href="lovers.php"><img src="assets/img/logo3.png" class="logo mx-auto"></a>
+            <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
-    <a href="index.php">index</a>
-    <a href="user.php">user</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <a class="link-color mt-1">Bonjour <?= $_COOKIE["firstname"] ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="link-color mt-1" href="lovers.php">Nos célibataires</a>
+                </li>
+                <li class="nav-item">
+                    <a class="link-color mt-1" href="user.php">Mon compte</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="card-group">
                 <?php
                 foreach ($profils as $profil) {
-                    if ($_COOKIE("type") == "Homme") {
-                        // $profil["gender"];
-                    }
+                    if (($profil["gender"] == $_COOKIE["type"]) || (($_COOKIE["type"]) == "Homme & Femme")) {
                 ?>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mt-5">
-                        <div class="card h-100">
-                            <img src="<?= $profil["picture"] ?>" class="test" alt="...">
-                            <div class="card-body">
-                                <h1 class="card-title text-center h4"><?= $profil["lastName"] . " " . $profil["firstName"] ?></h1>
-                                <div class="card-text h5">
-                                    <p class="my-3"><span class="font-weight-bold">Age</span> : <?= $profil["age"] ?></p>
-                                    <p class="my-3"><span class="font-weight-bold">Code Postal</span> : <?= $profil["postalCode"] ?></p>
-                                    <p class="my-3"><span class="font-weight-bold">Description</span> :</p>
-                                    <p class=""><?= $profil["description"] ?></p>
+                        <div class="col-lg-4 col-md-6 col-sm-12 mt-5">
+                            <div class="card h-100">
+                                <img src="<?= $profil["picture"] ?>" class="test" alt="...">
+                                <div class="card-body">
+                                    <h1 class="card-title text-center h4"><?= $profil["lastName"] . " " . $profil["firstName"] ?></h1>
+                                    <div class="card-text h5">
+                                        <p class="my-3"><span class="font-weight-bold">Age</span> : <?= $profil["age"] ?></p>
+                                        <p class="my-3"><span class="font-weight-bold">Code Postal</span> : <?= $profil["postalCode"] ?></p>
+                                        <p class="my-3"><span class="font-weight-bold">Description</span> :</p>
+                                        <p class=""><?= $profil["description"] ?></p>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <small class="text-muted"><i class="far fa-heart fa-2x heartIcon"></i></small>
                                 </div>
                             </div>
-                            <div class="card-footer text-center">
-                                <small class="text-muted"><i class="far fa-heart fa-2x heartIcon"></i></small>
-                            </div>
                         </div>
-                    </div>
                 <?php
+                    }
                 }
                 ?>
+
+
             </div>
         </div>
     </div>
+
+    <footer class="text-center bg-white d-flex align-items-center justify-content-center">
+        <h5 class="bg-white ">Copyright© 2021 VENUS</h5>
+    </footer>
 
 
 

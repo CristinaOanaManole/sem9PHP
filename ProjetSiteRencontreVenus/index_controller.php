@@ -36,14 +36,20 @@ if (empty($_COOKIE)) {
                 $error["Firstname"] = "<i>Veuillez renseigner votre prénom</i>";
             }
         }
-
+        
         if (isset($_POST["age"])) {
-            if (preg_match($regexAge, $_POST["age"])) {
-                $securedAge = htmlspecialchars($_POST["age"]);
+            if (!is_numeric($_POST["age"])) {
+                $error["Age"] = "<i>Erreur, veuillez renseigner votre âge</i>";
             } else {
-                $error["Age"] = "<i>Erreur, veuillez entrer votre âge</i>";
+                if (preg_match($regexAge, $_POST["age"])) {
+                    $securedAge = htmlspecialchars($_POST["age"]);
+                } else if ($_POST["age"] < 18){
+                    $error["Age"] = "<i>Le site est inaccessible pour les mineurs.</i>";
+                } else {
+                    $error["Age"] = "<i>Erreur, veuillez renseigner votre âge</i>";
+                }
             }
-
+            
             if (empty($_POST["age"])) {
                 $error["Age"] = "<i>Veuillez renseigner votre âge</i>";
             }

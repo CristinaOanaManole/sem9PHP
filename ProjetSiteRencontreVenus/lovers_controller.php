@@ -49,7 +49,7 @@ $profils = [
         "email" => "manu-president@elysee.com",
         "postalCode" => 75008,
         "picture" => "assets/img/Macron.jpg",
-        "description" => "Aprés de gros soucis sentimentale avec mon ex-épouse et professionnel, je tente une réinsertion progressive vers une vie normale."
+        "description" => "Aprés de gros soucis sentimentaux avec mon ex-épouse et professionnel, je tente une réinsertion progressive vers une vie normale."
     ],
     6 => [
         "lastName" => "Ferrand",
@@ -64,11 +64,11 @@ $profils = [
     7 => [
         "lastName" => "Anderson",
         "firstName" => "Julia",
-        "age" => "29",
+        "age" => "26",
         "gender" => "Femme",
         "email" => "juju-anders@hotmail.fr",
         "postalCode" => 75500,
-        "picture" => "assets/img/..",
+        "picture" => "assets/img/Anderson.jpg",
         "description" => "Jeune et fougueuse, je ne souhaite pas rencontrer ma futur moitié mais pourquoi pas celui qui me fera vibrer à nouveau.",
     ],
     8 => [
@@ -78,17 +78,17 @@ $profils = [
         "gender" => "Femme",
         "email" => "suzy-pavot@outlook.fr",
         "postalCode" => 69000,
-        "picture" => "assets/img/..",
+        "picture" => "assets/img/Pavot.jpg",
         "description" => "Je souhaite pouvoir enfin rencontrer l'amour.",
     ],
     9 => [
         "lastName" => "Roberts",
         "firstName" => "Pamela",
-        "age" => "35",
+        "age" => "31",
         "gender" => "Femme",
         "email" => "pam-robs@outlook.fr",
         "postalCode" => 13000,
-        "picture" => "assets/img/..",
+        "picture" => "assets/img/Roberts.jpg",
         "description" => "Aprés avoir consacrer ma vie à mon travail et aprés avoir eux de nombreuses relations instables, j'aimerais pouvoir trouver l'amour et enfin fonder une famille.",
     ],
     10 => [
@@ -112,13 +112,13 @@ $profils = [
         "description" => "J'aimerais faire de belles rencontres et partager un bout de chemin avec celui qui fera chavirer mon coeur.",
     ],
     12 => [
-        "lastName" => "Delova",
-        "firstName" => "Ginette",
+        "lastName" => "Trogneux",
+        "firstName" => "Brigitte",
         "age" => "63",
         "gender" => "Femme",
-        "email" => "suzy-pavot@outlook.fr",
-        "postalCode" => 69000,
-        "picture" => "assets/img/..",
-        "description" => "Veuve depuis maintenant plusieurs années, je fait enfin le pas vers une nouvelle vie à deux.",
+        "email" => "brigitte-trogneux@outlook.fr",
+        "postalCode" => 75016,
+        "picture" => "assets/img/trogneux.jpeg",
+        "description" => "Séparée depuis peu, je cherche un nouveau petit jeune",
     ],
 ];
