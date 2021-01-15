@@ -37,6 +37,11 @@
     <img src="assets/img/bebe-ballon.jpg" alt="Page inexistante">
 </div>
 
+<div class="text-center m-5">
+  <a class="btn btn-light" href="http://sem9php/ProjetXML/accueil.html">Accueil</a>
+</div>
+
+
 <footer class="bg-light text-center align-items-center justify-content-center p-4">
         <p class="text-center">Maçonnerie Ocordo © 2021 Tous les droits réserves </p>
     </footer>

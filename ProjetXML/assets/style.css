@@ -1,9 +1,15 @@
 .gallery_box_single {
     display: flex;
-    flex-direction: row;
-justify-content: center;
+    width: auto;
+    height: 30rem;
+   margin:0;
 align-items: center;
 text-align:center;
+}
+
+.img {
+    width: 15rem;
+    height: 15rem;
 }
 
 h1
@@ -32,7 +38,7 @@ h3
 }
 
 body {
-    background-color: #b08968;
+    background-color: #b9a798e0;
 }
 
 .menu{
