@@ -3,4 +3,4 @@ RewriteRule accueil.html ?menu=accueil
 RewriteRule aboutUs.html ?menu=aboutUs
 RewriteRule opinion.html ?menu=opinion
 RewriteRule contact.html ?menu=contact
-ErrorDocument 404 /page-404.php
+ErrorDocument 404 /erreur.php

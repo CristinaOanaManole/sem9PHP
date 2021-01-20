@@ -1,18 +1,7 @@
 <?php
-// mettre dans une variable le ficher xml
-// $file = "source.xml";
-// // $fp pour File Parse, fonction qui va permettre d ouvrir le fichier grace au "fopen" le "r" c'est read-only
-// $fp = fopen($file , "r");
-// // Ensuite il y a une erreur si jamais la variable fp n'est pas définie
-// if (!$fp) die("Pas de fichier");
-
-
-    // Affichage "brut" de la ligne convertie en HTML
-    // Et ensuite une boucle qui lit chaque ligne en mettant un br entre chaque sans le br ça ne fonctionne pas
-   
-// while ( $ligneXML = fgets($fp)) {
-//     echo $ligneXML."<br />";
-// }
+if (!isset($_GET["page"])) {
+  header("Location: accueil");
+}
 
 $data = "source.xml";
     $xml = simplexml_load_file($data);
@@ -26,9 +15,7 @@ $data = "source.xml";
     $opinionTitle = $xml->page[2]->title;
 
     $contact = $xml->page[3]->content;
-    $contactTitle = $xml->page[3]->title;
-
-    
+    $contactTitle = $xml->page[3]->title;    
 
 ?> 
 
@@ -59,23 +46,23 @@ echo $aboutUsTitle;
 <body>  
 
 <nav class="navbar navbar-expand-lg navbar-light menu">
-  <a class="navbar-brand " href="http://sem9php/ProjetXML/accueil.html">Maçonnerie Ocordo</a>
+  <a class="navbar-brand " href="http://exo-xml/accueil.html">Menu</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="http://sem9php/ProjetXML/accueil.html">Accueil</a>
+        <a class="nav-link" href="http://exo-xml/accueil.html">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://sem9php/ProjetXML/aboutUs.html">Qui sommes nous ?</a>
+        <a class="nav-link" href="http://exo-xml/aboutUs.html">Qui sommes nous ?</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://sem9php/ProjetXML/opinion.html">Nos clients témoignent</a>
+        <a class="nav-link" href="http://exo-xml/opinion.html">Nos clients témoignent</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://sem9php/ProjetXML/contact.html">Contact</a>
+        <a class="nav-link" href="http://exo-xml/contact.html">Contact</a>
       </li>
     </ul>
   </div>
@@ -101,7 +88,6 @@ echo $aboutUs;
 <footer class="bg-light text-center align-items-center justify-content-center p-4">
         <p class="text-center">Maçonnerie Ocordo © 2021 Tous les droits réserves </p>
     </footer>
-
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
